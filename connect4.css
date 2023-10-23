@@ -1,23 +1,29 @@
 /* game board table */
-
 #board td {
   width: 50px;
   height: 50px;
   border: solid 1px #666;
+  vertical-align: bottom;  /* Ensure pieces drop to the bottom of the cell */
 }
 
-/* pieces are div within game table cells: draw as colored circles */
-
 .piece {
-  /* TODO: make into circles */
+  border-radius: 50%;   /* Makes the pieces circular */
   margin: 5px;
   width: 80%;
   height: 80%;
+  background-color: red;   /* Default color */
+  position: relative;  /* Allow for potential animation */
+  transition: top 0.5s;    /* Animation for the dropping effect */
 }
 
-/* TODO: make pieces red/blue,  depending on player 1/2 piece */
+/* Distinguish between player 1 and 2 pieces */
+.p1 {
+  background-color: red;
+}
 
-/* column-top is table row of clickable areas for each column */
+.p2 {
+  background-color: blue;
+}
 
 #column-top td {
   border: dashed 1px lightgray;
